@@ -36,8 +36,23 @@ def encode(password):
     return encoded_password
 
 # Decodes the password
+# (Partner) Karla's contribution
 def decode(password):
-    pass
+    decoded = ""
+    for i in password: # As you loop through, subtract 3 from whatever is read
+        digit = int(i) - 3
+
+        # These just fix the negative numbers to the correct corresponding number
+        if digit == -1:
+            digit = 9
+        if digit == -2:
+            digit = 8
+        if digit == -3:
+            digit = 7
+
+        decoded += str(digit) # Add each decoded digit into the empty string
+
+    return decoded
 
 def main():
     while True:
